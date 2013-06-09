@@ -1,0 +1,10 @@
+set title "Performance des structures de donnees"
+set xlabel "Nombre de lignes de l'instance"
+set ylabel "Temps CPU"
+plot "courbes.txt" using 1:2 with lines lt 1 title "Liste" 
+replot "courbes.txt" using 1:3 with lines lt 2 title "Hachage"
+replot "courbes.txt" using 1:4 with lines lt 3 title "ABRe"
+set term postscript portrait color
+set output "courbes.ps"
+set size 0.7 , 0.7
+replot
